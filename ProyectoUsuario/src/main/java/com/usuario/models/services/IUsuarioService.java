@@ -1,11 +1,13 @@
 package com.usuario.models.services;
 
 import java.util.List;
+import java.util.Optional;
+
 import com.usuario.models.entity.Usuario;
 
 public interface IUsuarioService {
-    public List<Usuario> findAll();
-    public Usuario save(Usuario usuario);
-    public Usuario findById(Long id);
-    public void delete(Long id);
+    List<Usuario> findAll();
+    Usuario save(Usuario usuario);
+    Optional<Usuario> findById(Long id); 
+    void delete(Long id);
 }

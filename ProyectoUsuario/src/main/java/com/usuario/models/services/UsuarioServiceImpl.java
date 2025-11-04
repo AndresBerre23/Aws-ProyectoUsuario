@@ -1,6 +1,7 @@
 package com.usuario.models.services;
 
 import java.util.List;
+import java.util.Optional; // Añadido
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,8 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
     @Override
     @Transactional(readOnly = true)
-    public Usuario findById(Long id) {
-        return usuarioDao.findById(id).orElse(null);
+    public Optional<Usuario> findById(Long id) {
+        return usuarioDao.findById(id); // Devuelve Optional directamente
     }
 
     @Override
